@@ -32,14 +32,17 @@ public class _04_RemovingStuffFromArrayLists {
 		stuffIFoundInTheYard.add(new Worm());
 		stuffIFoundInTheYard.add(new Dirt());
 
-		System.out.println(stuffIFoundInTheYard.size());
+		System.out.println("original list size: " + stuffIFoundInTheYard.size());
 
 		/* TODO 1: Clean out the dirt but keep the delicious worms. */
-		
-		
-		
-		
-		System.out.println(stuffIFoundInTheYard.size()); // should be 2
+		for (int i = 0; i < stuffIFoundInTheYard.size(); i++) {
+			System.out.println(stuffIFoundInTheYard.get(i).type);
+			if (stuffIFoundInTheYard.get(i).type.equals("dirt")) {
+				stuffIFoundInTheYard.remove(i);
+			}
+		}
+
+		System.out.println("worms: " + stuffIFoundInTheYard.size()); // should be 2
 
 		ArrayList<Character> truth = new ArrayList<Character>();
 		truth.add('c');
@@ -74,7 +77,15 @@ public class _04_RemovingStuffFromArrayLists {
 		truth.add('r');
 		truth.add('#');
 		/* TODO 2: Remove the hash symbols and print out the truth. */
-
+		System.out.println("the tainted truth: " + truth);
+		
+		for (int i = 0; i < truth.size(); i++) {
+			if (truth.get(i).equals('#')) {
+				truth.remove(i);
+			}
+		}
+		
+		System.out.println("the truth: " + truth);
 		
 		
 	}
